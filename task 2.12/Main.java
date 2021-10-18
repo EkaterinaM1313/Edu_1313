@@ -1,7 +1,7 @@
 import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
-        int[] arr = Arrays.stream("2, 4, 4, 4, 8, 8, 4, 12, 12, 14".split(", "))
+        int[] arr = Arrays.stream("8, 8, 8, 8, 8, 8, 6, 5, 9, 3".split(", "))
                 .mapToInt(Integer::parseInt).toArray();
         int current = 1, max = 0;
         for (int i = 1; i < arr.length; i++) {
