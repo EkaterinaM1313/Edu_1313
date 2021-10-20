@@ -7,7 +7,7 @@ public class Main {
         Person person4 = new Person("Иван", "Иванов", 30, person3, person8);
         Person person5 = new Person("Ева", "Иванова", 30, person7, person2);
         Person person6 = new Person("Филипп", "Иванов", 7, person5, person4);
-        person7.info();
+        person6.info();
             }
 }
 
@@ -32,17 +32,25 @@ class Person{
     public void info(){
         String info = "Меня зовут "+this.name+"\n";
 
-        if (this.getMother() != null){
-            info += "Мою маму зовут "+this.getMother().name+"\n";
+       if (this.getMother() != null){
+           info += "Мою маму зовут "+this.getMother().name+"\n";
             if(this.getMother().getFather() != null){
-                info += "Моего дедушку по маминой линии зовут "+this.getMother().getFather().name+"\n";
+            info += "Моего дедушку по маминой линии зовут "+this.getMother().getFather().name+"\n";
+
+            if (this.getMother().getMother() !=null) {
+            info += "Мою бабушку по маминой линии зовут "+this.getMother().getMother().name+"\n";
+                }
             }
         }
         if (this.getFather() != null){
             info += "Моего папу зовут "+this.getFather().name+"\n";
             if(this.getFather().getMother() != null){
-                info += "Мою бабушку по папиной линии зовут "+this.getFather().getMother().name+"\n";
+            info += "Мою бабушку по папиной линии зовут "+this.getFather().getMother().name+"\n";
+
+            if(this.getFather().getFather() != null)
+            info += "Моего дедушку по папиной линии зовут "+this.getFather().getFather().name+"\n";
             }
+
         }
         System.out.println(info);
     }
